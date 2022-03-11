@@ -1,0 +1,16 @@
+docker search mysql
+docker pull mysql
+
+docker run --name utel-mysql -e MYSQL_ROOT_PASSWORD='12345' -p 3307:3306 -d mysql:latest
+
+sudo netstat -tulpn | grep LISTEN
+
+mysql --host=127.0.0.1 --port=3307 --ssl=0 -u root -p
+
+docker rm -f utel-mysql
+docker rmi mysql (remove image)
+docker volume prune
+
+docker container ls
+docker image ls
+docker image prune 
